@@ -228,5 +228,5 @@ Some Linux distributions (like Ubuntu) have IPv6 enabled by default, and
 microk8s networking does not currently support IPv6. A specific symptom
 of this problem is that curl to the registry port (or any other NodePort service)
 via localhost will hang. You can edit your /etc/hosts file to ensure that localhost 
-does not resolve to IPv6 addresses to resolve this problem. See (issue 498)[https://github.com/ubuntu/microk8s/issues/498]
+does not resolve to IPv6 addresses to resolve this problem. See [#498|https://github.com/ubuntu/microk8s/issues/498]
 for more details.
