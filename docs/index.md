@@ -222,3 +222,11 @@ By default container logs are located in `/var/log/pods/{id}`. You have to mount
            name: fluent-bit-config
 ```
 
+### I've enabled the registry, but am unable to access it (or any other NodePort service) from localhost...
+
+Some Linux distributions (like Ubuntu) have IPv6 enabled by default, and 
+microk8s networking does not currently support IPv6. A specific symptom
+of this problem is that curl to the registry port (or any other NodePort service)
+via localhost will hang. You can edit your /etc/hosts file to ensure that localhost 
+does not resolve to IPv6 addresses to resolve this problem. See (issue 498)[https://github.com/ubuntu/microk8s/issues/498]
+for more details.
